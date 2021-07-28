@@ -1,0 +1,104 @@
+hr {
+   border: 0px;
+   border-top: 2px dashed rgba(28, 107, 48, 1);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.rowVideo1{
+   display: flex;
+   flex-direction: column-reverse;
+}
+
+.rowVideo2{
+   display: flex;
+   flex-direction: column;
+}
+
+@media screen and (min-width: 1110px) {
+    .rowVideo1{
+   flex-direction: row;
+}
+
+.rowVideo2{
+   flex-direction: row;
+}
+}
+
+
+/* .flag {
+   height: 40px;
+   padding: 10px;
+}
+
+input[type="radio"] {
+   position: absolute;
+   opacity: 0;
+   width: 0;
+   height: 0;
+}
+
+input[type="radio"]+img {
+   cursor: pointer;
+   opacity: 0.4;
+   transition: 0.3s;
+}
+
+input[type="radio"]:checked+img {
+   opacity: 1;
+} */
+
+/* corpo centrale */
+#center {
+   position: relative;
+   font-family: 'Louis George Cafe Regular';
+   font-size: 20px;
+}
+
+h2, h3 {
+   color: rgba(28, 107, 48, 1);
+}
+
+#TMM {
+   color: rgba(28, 107, 48, 1);
+   opacity: 0.5;
+   transition: 0.3s;
+}
+
+#TMM:hover {
+   opacity: 1;
+}
+
+
+.p_title {
+   font-family: 'Typo Latin Serif Regular';
+   color: rgba(28, 107, 48, 1);
+}
+
+p {
+   margin-bottom: 50px;
+}
+
+.video {
+   width: 500px;
+   /* height: 500px; */
+}
+
+
+
+@media screen and (min-width: 768px) {
+   #p1_video {
+      padding-right: 50px;
+      margin: auto 4rem;
+   }
+   #p2_video {
+      padding-left: 50px;
+      margin: auto 4rem;
+   }
+}
+
+

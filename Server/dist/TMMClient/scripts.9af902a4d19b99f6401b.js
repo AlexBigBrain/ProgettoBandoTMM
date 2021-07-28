@@ -1,0 +1,1 @@
+function myMethod(o,e){if(console.log(o),"#home_p"!==o){var l=document.querySelector(o).offsetTop;l+=e,console.log(l),console.log(e),window.scrollTo(0,l)}else window.scrollTo(0,0)}

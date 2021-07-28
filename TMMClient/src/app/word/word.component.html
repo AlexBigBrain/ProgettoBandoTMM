@@ -1,0 +1,70 @@
+<div class="relative p-1 pb-4 md:p-12" id="center">
+    <div *ngIf="wordStatus(wordInfo) === 3">
+        <div *ngFor="let wordData of wordInfo.data.usable">
+            <h1 class="text-center">{{wordData.Word.specificWord}}</h1>
+            <br>
+
+            <h1 *ngIf="DescriptionIT.length > 0 && DescriptionEN.length > 0">Descrizioni:</h1>
+
+            <h2 *ngIf="DescriptionIT.length > 0">Descrizioni Italiane:</h2>
+            <div *ngFor="let DescriptionData of DescriptionIT; let i = index">
+                <h4>Descrizione {{i+1}}:</h4>
+                <p>{{DescriptionData.Description}}</p>
+                <h4 class="mt-1">Esempi Correlati:</h4>
+                <div *ngFor="let ExampleData of DescriptionData.Examples; let y = index">
+                    <p>{{y+1}}. {{ExampleData}}</p>
+                </div>
+
+                <br>
+            </div>
+            <br>
+            <h2 *ngIf="DescriptionEN.length > 0">Descrizioni Inglesi:</h2>
+            <div *ngFor="let DescriptionData of DescriptionEN; let i = index">
+                <h4>Descrizione {{i+1}}:</h4>
+                <p>{{DescriptionData.Description}}</p>
+                <h4 class="mt-1">Esempi Correlati:</h4>
+                <div *ngFor="let ExampleData of DescriptionData.Examples; let y = index">
+                    <p>{{y+1}}. {{ExampleData}}</p>
+                </div>
+                <br>
+            </div>
+
+            <br>
+
+            <h2 *ngIf="wordData.SinonimsIT.length > 0">Sinonimi Italiani:</h2>
+            <div *ngFor="let Sinonim of wordData.SinonimsIT">
+                <p>{{Sinonim}}</p>
+            </div>
+
+            <h2 *ngIf="wordData.SinonimsEN.length > 0">Sinonimi Inglesi:</h2>
+            <div *ngFor="let Sinonim of wordData.SinonimsEN">
+                <p>{{Sinonim}}</p>
+            </div>
+
+            <h2 *ngIf="wordData.TranslasionsIT.length > 0">Traduzioni Italiane:</h2>
+            <div *ngFor="let Traslation of wordData.TranslasionsIT">
+                <p>{{Traslation}}</p>
+            </div>
+
+            <h2 *ngIf="wordData.TranslasionsEN.length > 0">Traduzioni Inglesi:</h2>
+            <div *ngFor="let Translation of wordData.TranslasionsEN">
+                <p>{{Translation}}</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="wordStatus(wordInfo) === 0">
+        <h4>In attesa di risposta dal database</h4>
+    </div>
+    <div *ngIf="wordStatus(wordInfo) === -1">
+        <h4>Non è stato possibile connettersi con il database...</h4>
+    </div>
+    <div *ngIf="wordStatus(wordInfo) === 1">
+        <h4>La sua parola non è presente nei nostri database, i nostri tecnici provederanno ad inserire la sua parola il
+            prima possibile all'interno del nostro database, ci scusiamo per l'inconveniente.</h4>
+    </div>
+    <div *ngIf="wordStatus(wordInfo) === 2">
+        <h4>La parola da lei richiesta è già stata richiesta ma i nostri tecnici non hanno ancora provedduto ad inserire
+            le informazioni correlate a tale parola, ci scusiamo per l'inconveniente.
+        </h4>
+    </div>
+</div>

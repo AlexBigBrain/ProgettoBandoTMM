@@ -1,0 +1,123 @@
+<div class="relative w-full min-h-full">
+    <!-- intestazione -->
+    <header>
+        <figure class="m-0 relative">
+            <div class="grid grid-cols-12 pt-3 pb-3" id="header">
+                <!-- logo del BOT -->
+                <a class="md:col-span-2 md:col-start-2 col-span-3 self-center justify-self-center"
+                    href="https://t.me/Tmm_MyWordBot" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/images/MyWordBOT logo.png" id="BOT_logo"></a>
+
+                <!-- titolo del sito -->
+                <img src="../assets/logo/logo.svg" class="w-80 col-span-7 md:col-span-6 self-center justify-self-center"
+                    id="main_header">
+                <!-- logo di TMM (grande) -->
+                <a *ngIf="!(screenWidth < 768)" href="https://www.tuttomeritomio.it/" target="_blank"
+                    rel="noopener noreferrer" class="col-span-2 self-center justify-self-cente block">
+                    <img src="../assets/images/tmm logo.png" class="" id="TMM_logo_L">
+                </a>
+                <div *ngIf="screenWidth < 768"
+                    class="flex items-center justify-center cursor-pointer col-start-11 col-span-2"
+                    (click)="mobile_menu = true">
+                    <img src="../assets/images/menu.svg" class="h-8">
+                </div>
+            </div>
+        </figure>
+    </header>
+
+
+    <!-- barra delle pagine (sticky) -->
+    <div id="navbar" class="sticky grid grid-cols-12">
+        <!-- Barra di ricerca per dispositivi medio-grandi (screenWidth >= 768)-->
+        <div *ngIf="!(screenWidth < 768)" class="buttons flex col-span-8 lg:col-start-2 lg:col-span-7">
+            <!-- link "Home page" -->
+            <a [routerLink]="['home']" class="self-center" fragment="home_p"><i class="fas fa-home"></i> Home</a>
+            <!-- link "Chi siamo?" -->
+            <a [routerLink]="['home']" class="self-center" fragment="TMM_p"><i class="fas fa-users"></i> Chi siamo?</a>
+            <!-- link "Cos'è un BOT?" -->
+            <a [routerLink]="['home']" class="self-center" fragment="BOT_p"><i class="fab fa-telegram-plane"></i> Cos'è
+                un BOT?</a>
+        </div>
+        <!-- barra di ricerca -->
+        <form id="search_bar" class="md:col-start-9 md:col-span-4 col-span-full justify-center"
+            style="padding-right: 10px;">
+            <input type="search" placeholder="Cerca..." id="search_box" name="word" class="w-4/5" aria-label="Number"
+                matInput [formControl]="myControl" [matAutocomplete]="auto" #search_box>
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+            <button type="submit" id="search_btn" routerLink="word/{{myControl.value}}"><i class="fa fa-search"
+                    id="search_img"></i></button>
+            <!--
+            <input [(ngModel)]="word" type="search" id="search_box" name="word" class="w-4/5" placeholder="Cerca...">
+            <button type="submit" id="search_btn" routerLink="word/{{word}}"><i class="fa fa-search"
+                    id="search_img"></i></button>
+                    -->
+        </form>
+    </div>
+
+    <!-- Barra di ricerca per dispositivi piccoli (screenWidth < 768)-->
+    <div *ngIf="screenWidth < 768"
+        class="m-0 w-full min-h-screen fixed z-50 right-0 top-0 transform-gpu transition-all duration-500 bg-gray-100 {{mobileTranslation()}} ">
+        <div class="grid grid-cols-12 pt-3 pb-3">
+            <a class="flex items-center justify-center col-span-3" href="https://www.tuttomeritomio.it/" target="_blank"
+                rel="noopener noreferrer">
+                <img src="../assets/images/tmm logo.png" class="object-contain" style="height: 120px;">
+            </a>
+            <div class="flex items-center justify-center cursor-pointer col-start-11 col-span-2"
+                (click)="mobile_menu = false">
+                <img src="../assets/images/close.svg" class="h-8 text-center">
+            </div>
+        </div>
+        <div class="mb-auto grid grid-rows-3 " style="height: 60vh;">
+            <!-- link "Home page" -->
+            <a class="refmobilemenu" [routerLink]="['home/']" (click)="mobile_menu = false"><i class="fas fa-home"></i>
+                Home</a>
+            <!-- link "Chi siamo?" -->
+            <a class="refmobilemenu" [routerLink]="['home/']" fragment="TMM_p" (click)="mobile_menu = false"><i
+                    class="fas fa-users"></i> Chi
+                siamo?</a>
+            <!-- link "Cos'è un BOT?" -->
+            <a class="refmobilemenu" [routerLink]="['home/']" fragment="BOT_p" (click)="mobile_menu = false"><i
+                    class="fab fa-telegram-plane"></i> Cos'è un BOT?</a>
+        </div>
+    </div>
+
+    <div style="padding-bottom: 110px; height: 100%;">
+        <router-outlet></router-outlet>
+    </div>
+
+    <!-- piè di pagina -->
+    <footer class="absolute bottom-0 w-full">
+        <div id="footer">
+            <!-- logo di TMM (piccolo) -->
+            <a href="https://www.tuttomeritomio.it/" target="_blank" rel="noopener noreferrer">
+                <img src="../assets/images/tmm logo.png" id="TMM_logo_S">
+            </a>
+            <!-- seguici sui social -->
+            <div class="row">
+                <p id="follow_us" class="hidden md:block">
+                    Seguici sui social!
+                </p>
+                <!-- instagram -->
+                <a class="icon" target="_blank" rel="noopener noreferrer"
+                    href="https://www.instagram.com/tuttomeritomio/"><i class="fab fa-instagram"></i></a>
+                <!-- twitter -->
+                <a class="icon" target="_blank" rel="noopener noreferrer"
+                    href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fwww.tuttomeritomio.it%2F&linkname=TuttoMeritoMio%20-%20Zero%20ostacoli%20al%20talento&linknote="><i
+                        class="fab fa-twitter"></i></a>
+                <!-- facebook -->
+                <a class="icon" target="_blank" rel="noopener noreferrer"
+                    href="https://www.facebook.com/tuttomeritomio"><i class="fab fa-facebook-f"></i></a>
+                <!-- whatsapp -->
+                <a class="icon" target="_blank" rel="noopener noreferrer"
+                    href="https://api.whatsapp.com/send?text=TuttoMeritoMio%20-%20Zero%20ostacoli%20al%20talento%20https%3A%2F%2Fwww.tuttomeritomio.it%2F"><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+    <h1 *ngIf="screenWidth === 666" style="display: none;">created by Alessandro Custodi & Design Team, tutti facenti
+        parte del bando #TuttoMeritoMio</h1>
+</div>

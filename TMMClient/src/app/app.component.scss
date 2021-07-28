@@ -1,0 +1,257 @@
+hr {
+   border: 0px;
+   border-top: 2px dashed rgba(28, 107, 48, 1);
+}
+
+.row {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+.rowVideo1{
+   display: flex;
+   flex-direction: column-reverse;
+}
+
+.rowVideo2{
+   display: flex;
+   flex-direction: column;
+}
+
+@media screen and (min-width: 1110px) {
+   .rowVideo1{
+   flex-direction: row;
+}
+
+.rowVideo2{
+   flex-direction: row;
+}
+}
+
+#search_bar{
+   display: flex;
+   flex-direction: row;
+}
+
+/* header */
+#header {
+   background-image: url("../assets/textures/topography.png");
+   background-color: rgba(58, 177, 228, 1);
+   background-blend-mode: color-burn;
+}
+
+#main_header {
+   color: black;
+   font-family: 'Typo Latin Serif Regular';
+   font-size: 60px;
+   text-align: center;
+   padding: 1rem 0px;
+   border: 0px;
+   margin: 0px
+}
+
+#BOT_logo {
+   width: 120px;
+}
+
+@media screen and (min-width: 768px) {
+   #BOT_logo {
+      width: 150px;
+   }
+}
+
+
+
+#TMM_logo_L {
+   width: 150px;
+}
+
+/* navbar */
+#navbar {
+    background-color: rgba(23, 110, 150, 1);
+    z-index: 2;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+.sticky {
+   position: sticky;
+   top: 0;
+}
+
+.sticky+#center {
+   z-index: 1;
+   padding: 50px 50px 50px 50px;
+}
+
+.p_title:before {
+   content: "";
+   display: block;
+   margin-top: -2em;
+   height: 2em;
+}
+
+.refmobilemenu{
+   @apply justify-self-center text-center self-center w-48 p-2 m-3 transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110;
+
+}
+
+#navbar a {
+   font-family: 'Louis George Cafe Regular';
+   font-size: 20px;
+   text-decoration: none;
+   text-align: center;
+   color: white;
+   opacity: 0.5;
+   padding: 15px 25px;
+   transition: 0.3s;
+}
+
+#navbar a:hover {
+   opacity: 1;
+}
+
+/* .flag {
+   height: 40px;
+   padding: 10px;
+}
+
+input[type="radio"] {
+   position: absolute;
+   opacity: 0;
+   width: 0;
+   height: 0;
+}
+
+input[type="radio"]+img {
+   cursor: pointer;
+   opacity: 0.4;
+   transition: 0.3s;
+}
+
+input[type="radio"]:checked+img {
+   opacity: 1;
+} */
+#search_box {
+   float: right;
+   font-size: 17px;
+   padding: 10px;
+   border: none;
+   margin: 8px 0px 8px 8px;
+}
+
+@media screen and (min-width: 768px) {
+   #search_box {
+   width: 25vw;
+   }
+}
+
+
+#search_btn {
+   margin: 8px 0px;
+   width: 50px;
+   background-color: rgba(58, 177, 228, 1);
+   border: none;
+   transition: 0.3s;
+}
+
+#search_btn:hover {
+   background-color: rgba(28, 107, 48, 1);
+   cursor: pointer;
+}
+
+#search_img {
+   align-self: center;
+   font-size: 1.5em;
+   color: white;
+}
+
+/* corpo centrale */
+#center {
+   background-image: url("../assets/textures/gplay.png");
+   position: relative;
+   font-family: 'Louis George Cafe Regular';
+   font-size: 20px;
+   padding: 50px;
+}
+
+h2, h3 {
+   color: rgba(28, 107, 48, 1);
+}
+
+#TMM {
+   color: rgba(28, 107, 48, 1);
+   opacity: 0.5;
+   transition: 0.3s;
+}
+
+#TMM:hover {
+   opacity: 1;
+}
+
+
+.p_title {
+   font-family: 'Typo Latin Serif Regular';
+   color: rgba(28, 107, 48, 1);
+}
+
+p {
+   margin-bottom: 50px;
+}
+
+.video {
+   width: 500px;
+   /* height: 500px; */
+}
+
+#p1_video {
+   padding-right: 50px;
+   margin: auto;
+}
+
+#p2_video {
+   padding-left: 50px;
+   margin: auto;
+}
+
+/* footer */
+#footer {
+   background-image: url("../assets/textures/topography.png");
+   background-color: rgba(29, 126, 178, 1);
+   background-blend-mode: color-burn;
+   padding: 10px 0px;
+   display: flex;
+   justify-content: space-around;
+}
+
+#TMM_logo_S {
+   display: flex;
+   height: 100px;
+}
+
+#social {
+   margin: auto 0px;
+}
+
+#follow_us {
+   font-family: 'Louis George Cafe Regular';
+   font-size: 24px;
+   padding-right: 50px;
+   margin: auto;
+}
+
+.icon {
+   font-size: 2em;
+   color: black;
+   padding: 0px 15px;
+   margin: auto;
+   transition: 0.3s;
+}
+
+.icon:hover {
+   font-size: 3em;
+   color: rgba(28, 107, 48, 1);
+}
