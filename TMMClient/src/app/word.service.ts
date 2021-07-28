@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { takeUntil } from 'rxjs/operators';
 import { timer } from 'rxjs';
+import { environment } from './../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,9 @@ export class WordService {
 
   constructor(private http: HttpClient) { }
 
-  wordURL = 'https://tmmserver3.herokuapp.com/api';
-  searchURL = 'https://tmmserver3.herokuapp.com/api/search';
+  URLServer = environment.URLSERVER;
+  wordURL = this.URLServer + 'api';
+  searchURL = this.URLServer + 'api/search';
 
 
   /*
