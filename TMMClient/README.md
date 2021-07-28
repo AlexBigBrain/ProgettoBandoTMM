@@ -1,4 +1,7 @@
-In questa cartella è presente il progetto relativo alla pagina WEB in AngularJS
+In questa cartella è presente il progetto relativo alla pagina WEB in AngularJS,
+Ricordarsi di modificare l'URL nelle variabili di Environment, di buildare il sito in modalità production e
+inserirlo nel server NodeJS.
+In caso di dubbi sono sempre disponibile.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
