@@ -1,0 +1,2 @@
+In questa cartella è presente il file 'DBTMM.sql' e serve per la creazione del database con i relativi dati da me aggiunti in precedenza.
+Ci tengo ad informarvi che dentro al database non sono presenti tutti i dati scritti dal gruppo di traduzione.

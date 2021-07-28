@@ -1,0 +1,1 @@
+In questa cartella è presente il progetto relativo al Server scritto in NodeJS.

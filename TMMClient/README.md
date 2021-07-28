@@ -1,3 +1,7 @@
+In questa cartella è presente il progetto relativo alla pagina WEB in AngularJS
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # TMMClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
